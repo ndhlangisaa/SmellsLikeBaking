@@ -30,7 +30,10 @@ public class ViewPagerFragment extends Fragment {
         bundle.putInt(KEY_RECIPE_INDEX, index);
         ingredientsFragment.setArguments(bundle);
 
-        final DirectionsFragments directionsFragments = new DirectionsFragments();
+        final DirectionsFragment directionsFragments = new DirectionsFragment();
+        bundle = new Bundle();
+        bundle.putInt(KEY_RECIPE_INDEX, index);
+        directionsFragments.setArguments(bundle);
 
         ViewPager viewPager = view.findViewById(R.id.viewPager);
         viewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
